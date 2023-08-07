@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Товары<span th:style="'color:' + ${color}" th:text="${username}"></span>!
+    </h1>
+    <div th:each="el : ${purchases}" class="editInformation">
+        <div>
+            <p th:text="${el.product}" class="size" name="product" id="product" placeholder="Text"></p>
+        </div>
+    </div>
+</body>
+</html>
