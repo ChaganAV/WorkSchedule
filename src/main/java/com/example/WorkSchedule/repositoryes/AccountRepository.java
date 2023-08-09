@@ -15,4 +15,12 @@ public interface AccountRepository extends CrudRepository<Account,Long> {
     @Modifying
     @Query("UPDATE account SET amount = :amount WHERE id = :id")
     void changeAmount(long id, BigDecimal amount);
+
+    @Modifying
+    @Query("INSERT INTO account (name,amount) VALUES(:name, :amount)")
+    void addAmount(String name, BigDecimal amount);
+
+    @Modifying
+    @Query("DELETE FROM account WHERE id = :id")
+    void deleteAmount(long id);
 }

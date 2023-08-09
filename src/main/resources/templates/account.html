@@ -5,13 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Товары</h1>
-<div th:each="el : ${accounts}" class="editInformation">
-  <div>
-      <p th:text="${el.id}" class="size" name="id" id="id" placeholder="Text"></p>
-      <p th:text="${el.name}" class="size" name="name" id="name" placeholder="Text"></p>
-      <p th:text="${el.amount}" class="size" name="amount" id="amount" placeholder="Text"></p>
-  </div>
-</div>
+<h1><span th:style="'color:blue'" th:text="Счета"></span></h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Наименование</th>
+        <th>Сумма</th>
+    </tr>
+    <tr th:each="a: ${accounts}">
+        <td th:text="${a.id}"></td>
+        <td th:text="${a.name}"></td>
+        <td th:text="${a.amount}"></td>
+        <td>
+            <form action="/delete" method="post">
+                <button th:style="'color:red'" type="submit" name="id" value="${a.id}">Удалить</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<h2>Добавление счета</h2>
+<form action="/accounts" method="post">
+    Наименование: <input type="text" name="name"><br/>
+    Сумма: <input type="number" step="any" name="amount"><br/>
+    <button type="submit">Добавить счет</button>
+</form>
 </body>
 </html>

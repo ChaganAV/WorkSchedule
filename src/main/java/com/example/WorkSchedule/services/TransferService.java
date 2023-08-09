@@ -31,4 +31,10 @@ public class TransferService {
     public List<Account> findAccountsByName(String name){
         return accountRepository.findAccountsByName(name);
     }
+    public void addAccount(Account account){
+        accountRepository.addAmount(account.getName(),account.getAmount());
+    }
+    public void deleteAccount(long id){
+        accountRepository.deleteAmount(id);
+    }
 }
