@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
+    private final LoginProcessor loginProcessor;
+
+    public LoginController(LoginProcessor loginProcessor) {
+        this.loginProcessor = loginProcessor;
+    }
+
     @GetMapping("/")
     public String loginGet(){
         return "login.html";
@@ -17,12 +23,15 @@ public class LoginController {
     public String loginPost(@RequestParam String username,
                             @RequestParam String password,
                             Model model){
-        boolean loggedIn = false;
+        loginProcessor.setUsername(username);
+        loginProcessor.setPassword(password);
+        boolean loggedIn = loginProcessor.login();
+
         if(loggedIn){
-            model.addAttribute("message", "Вы успешно авторизовались");
-        }else {
-            model.addAttribute("message","Не верный логин/пароль");
+            return "redirect:/main";
         }
+
+        model.addAttribute("message","Не верный логин/пароль");
         return "login.html";
     }
 }
