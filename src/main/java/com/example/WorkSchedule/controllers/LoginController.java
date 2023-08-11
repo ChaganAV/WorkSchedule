@@ -28,7 +28,7 @@ public class LoginController {
         boolean loggedIn = loginProcessor.login();
 
         if(loggedIn){
-            return "redirect:/main";
+            return "redirect:/accounts";
         }
 
         model.addAttribute("message","Не верный логин/пароль");
