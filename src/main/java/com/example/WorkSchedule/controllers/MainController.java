@@ -17,6 +17,7 @@ public class MainController {
     public String home(@RequestParam(required = false) String Logout,
                        Model model){
         if (Logout != null){
+
             loggedUserManagementService.setUsername(null);
         }
 
