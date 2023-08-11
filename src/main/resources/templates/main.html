@@ -6,6 +6,10 @@
 </head>
 <body>
   <h1>Добро пожаловать, <span th:text="${username}"></span></h1>
+  <h2>
+      Ваш номер логина
+      <span th:text="${loginCount}"></span>
+  </h2>
   <a href="/main?Logout">Выход</a>
 </body>
 </html>

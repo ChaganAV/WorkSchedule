@@ -28,7 +28,6 @@ public class LoginController {
         boolean loggedIn = loginProcessor.login();
 
         if(loggedIn){
-            System.out.println("redirect:/main");
             return "redirect:/main";
         }
 

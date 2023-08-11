@@ -15,6 +15,7 @@ public class LoginProcessor {
     }
 
     public boolean login(){
+
         String username = this.getUsername();
         String password = this.getPassword();
 
