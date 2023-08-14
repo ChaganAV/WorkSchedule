@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники</title>
+</head>
+<body>
+    <header id="page_header">
+        <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
+    </header>
+
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>ФИО</th>
+            <th>Полное имя</th>
+            <th>Табельный номер</th>
+            <th>Действия</th>
+        </tr>
+        <tr th:each="p: ${persons}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.lastname}"></td>
+            <td th:text="${p.firstname}"></td>
+            <td th:text="${p.secondname}"></td>
+            <td th:text="${p.fio}"></td>
+            <td th:text="${p.fullname}"></td>
+            <td th:text="${p.tabnum}"></td>
+            <td>
+                <form action="/schedule" method="get">
+                    <button th:style="'color:green'" type="submit" value="${a.id}">Выбрать</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <footer>
+
+    </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники</title>
+</head>
+<body>
+  <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
+  <table>
+    <tr>
+      <th>ФИО</th>
+    </tr>
+    <tr th:each="sch: {$schedule}">
+      <td th:text="{$sch.fio}"></td>
+      <td>
+        <form action="/delete" method="post">
+          <button th:style="'color:red'" type="submit" name="id" value="${a.id}">Удалить</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
