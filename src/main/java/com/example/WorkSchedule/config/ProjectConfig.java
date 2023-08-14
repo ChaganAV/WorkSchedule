@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ProjectConfig {
-    @Bean
+    //@Bean
     public LayoutDialect layoutDialect(){
         return new LayoutDialect();
     }

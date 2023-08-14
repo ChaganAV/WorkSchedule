@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:decorate="~{layouts/layout}">
 <head>
     <meta charset="UTF-8">
     <title>Сотрудники</title>
 </head>
 <body>
-    <header id="page_header">
+    <header id="page_header" class="col-2" th:fragment="header">
         <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
     </header>
 
