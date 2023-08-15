@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:decorate="~{layouts/layout}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www..w3.org/1999/xhtml"
+      layout:decorate="~{layouts/layout}">
 <head>
     <meta charset="UTF-8">
     <title>Сотрудники</title>
 </head>
 <body>
-    <header id="page_header" class="col-2" th:fragment="header">
+    <header id="page_header" class="col-2" th:insert="layouts/layout :: header">
         <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
     </header>
 
@@ -35,7 +37,7 @@
             </td>
         </tr>
     </table>
-    <footer>
+    <footer th:repalce="layouts/layout :: footer">
 
     </footer>
 </body>
