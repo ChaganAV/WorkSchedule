@@ -38,8 +38,12 @@ public class PersonController {
         model.addAttribute("persons",persons);
         return "persons.html";
     }
+    @GetMapping("/addperson")
+    public String addPerson(){
+        return "addperson.html";
+    }
 
-    @PostMapping("/person")
+    @PostMapping("/addperson")
     public String addPerson(@RequestParam String lastname,
                             @RequestParam String firstname,
                             @RequestParam String secondname,

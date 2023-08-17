@@ -4,31 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Графики работы</title>
-    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-    <header class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">My project</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+    <header id="main_header" class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+        <section class="container">
+            <a class="navbar-brand" href="#">Рабочие графики</a>
+            <nav id="nav_header" class="navbar-collapse collapse">
+                <ul>
                     <li th:classappend="${module == 'home' ? 'active' : ''}">
                         <a href="#" th:href="@{/}">Home</a>
                     </li>
                     <li th:classappend="${module == 'tasks' ? 'active' : ''}">
-                        <a href="#" th:href="@{/task}">Tasks</a>
+                        <a href="#" th:href="@{/accounts}">Account</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="navbar-nav-right">
                     <li>
-                        <a href="/signin" th:href="@{/signin}">
+                        <a href="/login" th:href="@{/login}">
                             <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;Sign in
                         </a>
                     </li>
@@ -39,11 +33,28 @@
                         <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
                     </li>
                 </ul>
-            </div>
-        </div>
+            </nav>
+        </section>
     </header>
-    <footer th:fragment="footer">
-        &copy; 2023 Footer
+    <section id="sidebar" th:fragment="sidebar">
+
+        <nav>
+            <h3>Боковая панель</h3>
+        </nav>
+        <ul>
+            <li><a href="#">Добавить</a></li>
+            <li><a href="#">Перейти</a></li>
+        </ul>
+    </section>
+    <footer id="main_footer" th:fragment="footer">
+        <p>Copyright &copy; 2023 wstudio.online</p>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Политика</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>

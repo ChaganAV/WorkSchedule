@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление сотрудника</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <form method="post" action="/addPerson">
+    <fieldset id="personal_information">
+      <legend>Добавление сотрудника</legend>
+        <ol>
+          <li>
+            <label for="lastname">Фамилия</label>
+            <input type="text" name="lastname" autofocus id="lastname">
+          </li>
+          <li>
+            <label for="firstname">Имя</label>
+            <input type="text" name="firstname" id="firstname">
+          </li>
+          <li>
+            <label for="secondname">Отчество</label>
+            <input type="text" name="secondname" id="secondname">
+          </li>
+          <li>
+            <label for="birthday">Дата рождения</label>
+            <input type="date" name="birthday" id="birthday">
+          </li>
+          <li>
+            <label for="tabnum">Табельный номер</label>
+            <input type="text" name="tabnum" id="tabnum">
+          </li>
+          <li>
+            <input type="submit" value="Добавить">
+          </li>
+        </ol>
+    </fieldset>
+  </form>
+</body>
+</html>

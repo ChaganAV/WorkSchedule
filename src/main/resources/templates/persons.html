@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www..w3.org/1999/xhtml"
-      layout:decorate="~{layouts/layout}">
+      xmlns:layout="http://www..w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Сотрудники</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-    <header id="page_header" class="col-2" th:insert="layouts/layout :: header">
+    <header id="page_header" class="col-2" th:insert="~{layouts/layout :: header}">
         <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
     </header>
+    <section th:insert="~{layouts/layout :: sidebar}">
 
-    <table border="1">
-        <tr>
-            <th>id</th>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Отчество</th>
-            <th>ФИО</th>
-            <th>Полное имя</th>
-            <th>Табельный номер</th>
-            <th>Действия</th>
-        </tr>
-        <tr th:each="p: ${persons}">
-            <td th:text="${p.id}"></td>
-            <td th:text="${p.lastname}"></td>
-            <td th:text="${p.firstname}"></td>
-            <td th:text="${p.secondname}"></td>
-            <td th:text="${p.fio}"></td>
-            <td th:text="${p.fullname}"></td>
-            <td th:text="${p.tabnum}"></td>
-            <td>
-                <form action="/schedule" method="get">
-                    <button th:style="'color:green'" type="submit" value="${a.id}">Выбрать</button>
-                </form>
-            </td>
-        </tr>
-    </table>
-    <footer th:repalce="layouts/layout :: footer">
+    </section>
+    <section id="posts">
+        <article id="post">
+            <header id="person_header">
+                <h2>Сотрудники</h2>
+            </header>
+            <table border="1">
+                <tr>
+                    <th>id</th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Отчество</th>
+                    <th>ФИО</th>
+                    <th>Полное имя</th>
+                    <th>Табельный номер</th>
+                    <th>Действия</th>
+                </tr>
+                <tr th:each="p: ${persons}">
+                    <td th:text="${p.id}"></td>
+                    <td th:text="${p.lastname}"></td>
+                    <td th:text="${p.firstname}"></td>
+                    <td th:text="${p.secondname}"></td>
+                    <td th:text="${p.fio}"></td>
+                    <td th:text="${p.fullname}"></td>
+                    <td th:text="${p.tabnum}"></td>
+                    <td>
+                        <form action="/schedule" method="get">
+                            <button th:style="'color:green'" type="submit" value="${a.id}">Выбрать</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <footer>
+                <p><a href="/addperson">Добавить сотрудника</a></p>
+            </footer>
+        </article>
+    </section>
+    <footer th:replace="~{layouts/layout :: footer}">
 
     </footer>
 </body>
