@@ -1,8 +1,33 @@
 body{
     margin: 15px auto;
     font-family: Arial, "MS Trebuchet", sans-serif;
-    width: 960px;
+    width: 98%;
+    height: 98%;
+    margin: 0px;
+    padding: 0px;
 }
+/** для прижатия footer
+.wrapper{
+    position:relative;
+    min-height:100%;
+    height:auto!important;
+    overflow:hidden;
+}
+.wrapper:after{
+    content: "";
+    height: 80px;
+    display: block;
+}*/
+#main_footer{
+    height: 100%;
+    position: bottom;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.1);
+}
+
+/** */
 p{
     margin: 0 0 20px 0;
 }
@@ -41,6 +66,11 @@ p, li {
 .navbar-nav-right{
     float: right;
 }
+
+#posts{
+    float: left;
+    width: 85%;
+}
 #nav_header > ul{
     margin: 0 20px 0 0;
     padding:0;
@@ -48,20 +78,26 @@ p, li {
 }
 #sidebar{
     float: left;
-    width: 25%;
+    width: 15%;
 }
+
 #main_footer{
     clear: both;
     display: block;
     text-align: center;
     width: 100%;
+    float:
 }
 
 #main_header{
-    background-color: #693;
+    /**background-color: #693;*/
+    background: liner-gradient(top, #000, #fff);
+    border-radius: 10px;
 }
 
-////
+/**
+списки в addperson
+*/
 ol{
     list-style: none;
     margin: 0;
@@ -82,4 +118,54 @@ input{
 }
 input:focus{
     background-color: #ffe;
+}
+
+fieldset{
+    width: 216px;
+}
+
+fieldset ol{
+    list-style: none;
+    padding: 0;
+    margin: 2px;
+}
+
+fieldset ol li{
+    margin: 0 0 9px 0;
+    padding: 0;
+}
+
+fieldset input{
+    display: block;
+}
+/** стилизация валидации */
+input[required]:invalid, input[pattern]:invalid{
+    border-color: #A5340B;
+}
+input[required]:valid, input[pattern]:valid{
+    border-color: #0B9900;
+}
+
+/**
+таблица
+*/
+table{
+    border-collapse: collapse;
+    /**width: 100%;*/
+}
+/* уберем сетку*/
+th, td{
+    border: none;
+}
+/* оформим заголовок*/
+th{
+    background-color: #000;
+    color: #fff;
+}
+/* чередование цвета строк*/
+tr:nth-of-type(even){
+    background-color: #F3F3F3;
+}
+tr:nth-of-type(odd){
+    background-color: #ddd;
 }

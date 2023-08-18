@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
-    <header id="main_header" class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <header id="main_header" th:fragment="header">
         <section class="container">
             <a class="navbar-brand" href="#">Рабочие графики</a>
             <nav id="nav_header" class="navbar-collapse collapse">
@@ -36,16 +36,7 @@
             </nav>
         </section>
     </header>
-    <section id="sidebar" th:fragment="sidebar">
 
-        <nav>
-            <h3>Боковая панель</h3>
-        </nav>
-        <ul>
-            <li><a href="#">Добавить</a></li>
-            <li><a href="#">Перейти</a></li>
-        </ul>
-    </section>
     <footer id="main_footer" th:fragment="footer">
         <p>Copyright &copy; 2023 wstudio.online</p>
         <nav>

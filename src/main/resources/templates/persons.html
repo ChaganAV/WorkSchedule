@@ -10,14 +10,17 @@
     <header id="page_header" class="col-2" th:insert="~{layouts/layout :: header}">
         <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
     </header>
-    <section th:insert="~{layouts/layout :: sidebar}">
-
-    </section>
-    <section id="posts">
-        <article id="post">
-            <header id="person_header">
-                <h2>Сотрудники</h2>
+    <section class="wrapper">
+        <section id="sidebar">
+            <header class="person_header">
+                <h3>Сотрудники</h3>
             </header>
+            <ul>
+                <li><a href="/addperson">Добавить</a></li>
+                <li><a href="#">Перейти</a></li>
+            </ul>
+        </section>
+        <section id="posts">
             <table border="1">
                 <tr>
                     <th>id</th>
@@ -39,15 +42,12 @@
                     <td th:text="${p.tabnum}"></td>
                     <td>
                         <form action="/schedule" method="get">
-                            <button th:style="'color:green'" type="submit" value="${a.id}">Выбрать</button>
+                            <button th:style="'color:green'" type="submit" value="${a.id}">График</button>
                         </form>
                     </td>
                 </tr>
             </table>
-            <footer>
-                <p><a href="/addperson">Добавить сотрудника</a></p>
-            </footer>
-        </article>
+        </section>
     </section>
     <footer th:replace="~{layouts/layout :: footer}">
 
