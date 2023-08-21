@@ -4,53 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Сотрудники</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body>
     <header id="page_header" class="col-2" th:insert="~{layouts/layout :: header}">
         <h1><span th:style="'color:blue'" th:text="Сотрудники"></span></h1>
     </header>
-    <section class="wrapper">
-        <section id="sidebar">
+    <section class="card">
+        <section class="card-header">
             <header class="person_header">
                 <h3>Сотрудники</h3>
             </header>
+        </section>
+        <section>
             <ul>
                 <li><a href="/addperson">Добавить</a></li>
                 <li><a href="#">Перейти</a></li>
             </ul>
         </section>
-        <section id="posts">
-            <table border="1">
-                <tr>
-                    <th>id</th>
-                    <th>Фамилия</th>
-                    <th>Имя</th>
-                    <th>Отчество</th>
-                    <th>ФИО</th>
-                    <th>Полное имя</th>
-                    <th>Табельный номер</th>
-                    <th>Действия</th>
-                </tr>
-                <tr th:each="p: ${persons}">
-                    <td th:text="${p.id}"></td>
-                    <td th:text="${p.lastname}"></td>
-                    <td th:text="${p.firstname}"></td>
-                    <td th:text="${p.secondname}"></td>
-                    <td th:text="${p.fio}"></td>
-                    <td th:text="${p.fullname}"></td>
-                    <td th:text="${p.tabnum}"></td>
-                    <td>
-                        <form action="/schedule" method="get">
-                            <button th:style="'color:green'" type="submit" value="${a.id}">График</button>
-                        </form>
-                    </td>
-                </tr>
+        <section class="card-body">
+            <table class="table table-striped" border="1">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">id</th>
+                        <th scope="col">Фамилия</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Отчество</th>
+                        <th scope="col">ФИО</th>
+                        <th scope="col">Полное имя</th>
+                        <th scope="col">Табельный номер</th>
+                        <th scope="col">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p: ${persons}">
+                        <th scope="row"></th>
+                        <td th:text="${p.id}"></td>
+                        <td th:text="${p.lastname}"></td>
+                        <td th:text="${p.firstname}"></td>
+                        <td th:text="${p.secondname}"></td>
+                        <td th:text="${p.fio}"></td>
+                        <td th:text="${p.fullname}"></td>
+                        <td th:text="${p.tabnum}"></td>
+                        <td>
+                            <form action="/schedule" method="get">
+                                <button th:style="'color:green'" type="submit" value="${a.id}">График</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </section>
     </section>
     <footer th:replace="~{layouts/layout :: footer}">
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
 </body>
 </html>
