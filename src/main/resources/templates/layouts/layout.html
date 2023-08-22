@@ -13,7 +13,7 @@
 <body>
     <header class="navbar navbar-expand-lg bg-body-tertiary" th:fragment="header">
         <section class="container-fluid bg-primary p-2 text-white">
-            <a class="navbar-brand text-white" href="#">Рабочие графики</a>
+            <a class="navbar-brand text-white mb-1 h1" href="#">Рабочие графики</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#nav_header" aria-controls="#" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -28,33 +28,33 @@
                         <a class="nav-link text-white" href="#" th:href="@{/accounts}">Account</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <!--ul class="navbar-nav-right">
-                        <li>
-                            <a href="/login" th:href="@{/login}">
+                <!--form class="d-flex"-->
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/login" th:href="@{/login}">
                                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;Sign in
                             </a>
                         </li>
-                        <li>
-                            <a href="/logout" th:href="@{#}" onclick="$('#form').submit();">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/logout" th:href="@{#}" onclick="$('#form').submit();">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout
                             </a>
                             <form style="visibility: hidden" id="form" method="post" action="#" th:action="@{/logout}"></form>
                         </li>
-                    </ul-->
-                    <button class="btn btn-outline-warning text-white" type="submit" th:action="@{/logout}">Выход</button>
-                </form>
+                    </ul>
+                    <!--button class="btn btn-outline-warning text-white" type="submit" th:action="@{/logout}">Выход</button>
+                </form-->
             </nav>
         </section>
     </header>
 
-    <footer id="main_footer" th:fragment="footer">
+    <footer id="main_footer2" class="position-absolute bottom-0 start-50" th:fragment="footer">
         <p>Copyright &copy; 2023 wstudio.online</p>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Политика</a></li>
+        <nav class="navbar me-auto mb-2 mb-lg-0" style="background-color: #e3f2fd;">
+            <ul class="nav justify-content-end">
+                <li class="nav-item"><a href="#">Главная</a></li>
+                <li class="nav-item"><a href="#">О нас</a></li>
+                <li class="nav-item"><a href="#">Политика</a></li>
             </ul>
         </nav>
     </footer>
